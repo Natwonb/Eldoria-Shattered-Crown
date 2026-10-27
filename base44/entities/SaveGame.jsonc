@@ -1,0 +1,44 @@
+{
+  "name": "SaveGame",
+  "type": "object",
+  "properties": {
+    "slot": {
+      "type": "string",
+      "description": "Save slot id, default slot-1",
+      "default": "slot-1"
+    },
+    "character_name": {
+      "type": "string",
+      "description": "Display name of the saved character"
+    },
+    "character_level": {
+      "type": "number",
+      "description": "Level of the saved character"
+    },
+    "saved_at": {
+      "type": "string",
+      "description": "ISO timestamp of last cloud save"
+    },
+    "state_json": {
+      "type": "string",
+      "description": "Serialized game state JSON string"
+    }
+  },
+  "required": [
+    "slot",
+    "state_json",
+    "saved_at"
+  ],
+  "rls": {
+    "create": null,
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}

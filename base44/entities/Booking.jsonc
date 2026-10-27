@@ -1,0 +1,77 @@
+{
+  "name": "Booking",
+  "type": "object",
+  "properties": {
+    "service_type": {
+      "type": "string",
+      "enum": [
+        "standard",
+        "deep",
+        "move",
+        "office"
+      ],
+      "default": "standard",
+      "description": "Which cleaning service was booked"
+    },
+    "appointment_date": {
+      "type": "string",
+      "format": "date",
+      "description": "The day of the scheduled clean"
+    },
+    "time_slot": {
+      "type": "string",
+      "enum": [
+        "08:00",
+        "10:00",
+        "12:00",
+        "14:00",
+        "16:00"
+      ],
+      "description": "Arrival window for the clean"
+    },
+    "full_name": {
+      "type": "string",
+      "description": "Name of the person who booked"
+    },
+    "email": {
+      "type": "string",
+      "description": "Contact email for the booking"
+    },
+    "phone": {
+      "type": "string",
+      "description": "Contact phone number"
+    },
+    "address_line1": {
+      "type": "string",
+      "description": "Street address of the place to be cleaned"
+    },
+    "city": {
+      "type": "string"
+    },
+    "postal_code": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Access notes, pets, or anything the team should know"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "scheduled",
+        "completed",
+        "cancelled"
+      ],
+      "default": "scheduled"
+    }
+  },
+  "required": [
+    "service_type",
+    "appointment_date",
+    "time_slot",
+    "full_name",
+    "email",
+    "address_line1",
+    "city"
+  ]
+}
